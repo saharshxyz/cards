@@ -9,7 +9,7 @@ The Vercel 2.0 platform handles [routing](https://github.com/lachlanjc/ima-cards
 
 To start hacking, do the following:
 
-1. Clone this repo with `git clone https://github.com/lachlanjc/ima-cards
+1. Clone this repo with `git clone https://github.com/lachlanjc/ima-cards`
 2. Change directory with `cd og-image`
 3. Run `yarn` or `npm install` to install all dependencies
 4. Run locally with `vercel dev` and visit [localhost:3000](http://localhost:3000) (if nothing happens, run `npm install -g vercel`)
