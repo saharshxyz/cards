@@ -137,7 +137,7 @@ const fileTypeOptions: DropdownOption[] = [
   { text: 'JPEG', value: 'jpeg' },
 ];
 
-const fontSizeOptions: DropdownOption[] = Array.from({ length: 10 })
+const fontSizeOptions: DropdownOption[] = Array.from({ length: 15 })
   .map((_, i) => i * 25)
   .filter((n) => n > 0)
   .map((n) => ({ text: n + 'px', value: n + 'px' }));
