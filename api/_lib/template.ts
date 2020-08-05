@@ -1,17 +1,17 @@
-import marked from 'marked'
-import { sanitizeHtml } from './sanitizer'
-import { ParsedRequest } from './types'
-const twemoji = require('twemoji')
-const twOptions = { folder: 'svg', ext: '.svg' }
-const emojify = (text: string) => twemoji.parse(text, twOptions)
+import marked from 'marked';
+import { sanitizeHtml } from './sanitizer';
+import { ParsedRequest } from './types';
+const twemoji = require('twemoji');
+const twOptions = { folder: 'svg', ext: '.svg' };
+const emojify = (text: string) => twemoji.parse(text, twOptions);
 
 function getCss(theme: string, fontSize: string) {
-  let background = '#ffffff'
-  let radial = '#dde1e4'
+  let background = '#ffffff';
+  let radial = '#dde1e4';
 
   if (theme === 'dark') {
-    background = '#17171d'
-    radial = '#3c4858'
+    background = '#17171d';
+    radial = '#3c4858';
   }
 
   return `
@@ -121,11 +121,11 @@ function getCss(theme: string, fontSize: string) {
       width: 1em;
       margin: 0 .05em 0 .1em;
       vertical-align: -0.1em;
-    }`
+    }`;
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
-  const { text, theme, md, fontSize, images, caption } = parsedReq
+  const { text, theme, md, fontSize, images, caption } = parsedReq;
   return `<!DOCTYPE html>
   <html>
   <meta charset="utf-8">
@@ -137,17 +137,17 @@ export function getHtml(parsedReq: ParsedRequest) {
   <link rel="stylesheet" href="http://assets.lachlanjc.me/bf566c6457ac/gotham.css" />
   <body>
     <div class="brand">
-      <img class="avatar" src="https://github.com/lachlanjc.png">
-      @lachlanjc @ <span class="nyu">IMA</span>
+      <img class="avatar" src="https://saharsh.tech/assets/images/saharsh.png">
+      @saharshy29 @ <span class="nyu">IMA</span>
     </div>
     <div class="spacer">
       ${
         images.length > 0
           ? `<div class="img-wrapper">
           <img class="logo" src="${sanitizeHtml(images[0])}" />
-          ${images.slice(1).map(img => {
+          ${images.slice(1).map((img) => {
             return `<div class="plus">+</div>
-            <img class="logo" src="${sanitizeHtml(img)}" />`
+            <img class="logo" src="${sanitizeHtml(img)}" />`;
           })}
         </div>`
           : ''
@@ -162,5 +162,5 @@ export function getHtml(parsedReq: ParsedRequest) {
       }
     </div>
   </body>
-</html>`
+</html>`;
 }

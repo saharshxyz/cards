@@ -1,6 +1,5 @@
 {
-  "name": "ima-cards",
-  "regions": ["all"],
+  "name": "thought-cards",
   "public": true,
   "version": 2,
   "routes": [{ "handle": "filesystem" }, { "src": "/(.+)", "dest": "/api" }]
