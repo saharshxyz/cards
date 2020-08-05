@@ -35,10 +35,14 @@ function getCss(theme: string, fontSize: string) {
       text-align: center;
       align-items: center;
       justify-content: center;
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Lato', 'Lora', system-ui, 'Segoe UI', Roboto, sans-serif;
       font-size: ${sanitizeHtml(fontSize)};
       font-style: normal;
       letter-spacing: -.01em;
+    }
+
+    heading, brand--emphasis {
+      font-family: 'Lora', 'Lato', system-ui, 'Segoe UI', Roboto, sans-serif;
     }
 
     code {
@@ -105,7 +109,6 @@ function getCss(theme: string, fontSize: string) {
       padding-bottom: 25px;
       font-weight: 700;
       line-height: 0.875;
-      letter-spacing: -.06em;
     }
 
     .heading * {
@@ -141,10 +144,7 @@ export function getHtml(parsedReq: ParsedRequest) {
   <meta charset="utf-8">
   <title>Generated Image</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <style>
     ${getCss(theme, fontSize)}
   </style>

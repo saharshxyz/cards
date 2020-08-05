@@ -1,10 +1,15 @@
 body {
-  font-family: 'Nunito', system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Lato', 'Lora', system-ui, 'Segoe UI', Roboto, sans-serif;
   font-size: 16px;
   letter-spacing: -0.015em;
   line-height: 1.65;
   margin: 20px;
   color: #384046;
+}
+
+h1,
+h2 {
+  font-family: 'Lora', 'Lato', system-ui, 'Segoe UI', Roboto, sans-serif;
 }
 
 a {
