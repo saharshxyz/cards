@@ -6,12 +6,22 @@ const twOptions = { folder: 'svg', ext: '.svg' };
 const emojify = (text: string) => twemoji.parse(text, twOptions);
 
 function getCss(theme: string, fontSize: string) {
-  let background = '#ffffff';
-  let radial = '#dde1e4';
+  const bgLight = '#FFFFFF';
+  const radialLight = '#E4E9F1';
+  const bgDark = '#15283B';
+  const radialDark = '#2D3B4E';
+  const colorDarkPri = '#FBB13C';
+  const colorDarkSec = '#FF9A1F';
+  const colorLightPri = '#0169DF';
+  const colorLightSec = '#362EDC';
+  const colorSec = '#7a8c97';
+
+  let background = bgLight;
+  let radial = radialLight;
 
   if (theme === 'dark') {
-    background = '#17171d';
-    radial = '#3c4858';
+    background = bgDark;
+    radial = radialDark;
   }
 
   return `
@@ -25,7 +35,7 @@ function getCss(theme: string, fontSize: string) {
       text-align: center;
       align-items: center;
       justify-content: center;
-      font-family: 'Gotham A', 'Gotham B', sans-serif;
+      font-family: 'Nunito', sans-serif;
       font-size: ${sanitizeHtml(fontSize)};
       font-style: normal;
       letter-spacing: -.01em;
@@ -54,7 +64,7 @@ function getCss(theme: string, fontSize: string) {
     }
 
     .plus {
-      color: #7a8c97;
+      color: ${colorSec};
       font-size: 100px;
       padding: 0 50px;
     }
@@ -70,13 +80,13 @@ function getCss(theme: string, fontSize: string) {
       position: absolute;
       top: 0;
       width: 100%;
-      color: #7a8c97;
+      color: ${colorSec};
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .brand--emphasis {
-      color: ${theme === 'dark' ? '#c975ff' : '#57068c'};
+      color: ${theme === 'dark' ? colorDarkPri : colorLightPri};
       font-weight: 700;
       font-size: 100px;
       padding-left: .25em;
@@ -85,8 +95,8 @@ function getCss(theme: string, fontSize: string) {
     .heading {
       ${
         theme === 'dark'
-          ? 'background-image: linear-gradient(to bottom right, #c975ff, #8900e1);'
-          : 'background-image: linear-gradient(to bottom right, #8900e1 12.5%, #57068c);'
+          ? `background-image: linear-gradient(to bottom right, ${colorDarkPri} 60%, ${colorDarkSec});`
+          : `background-image: linear-gradient(to bottom right, ${colorLightPri} 80%, ${colorLightSec});`
       };
       background-repeat: no-repeat;
       -webkit-background-clip: text;
@@ -105,7 +115,7 @@ function getCss(theme: string, fontSize: string) {
     .caption {
       font-size: ${Number(sanitizeHtml(fontSize).match(/\d+/)) * 0.375}px;
       text-transform: uppercase;
-      color: #7a8c97;
+      color: ${colorSec};
       font-weight: 400;
       letter-spacing: 0;
     }
@@ -134,7 +144,6 @@ export function getHtml(parsedReq: ParsedRequest) {
   <style>
     ${getCss(theme, fontSize)}
   </style>
-  <link rel="stylesheet" href="http://assets.lachlanjc.me/bf566c6457ac/gotham.css" />
   <body>
     <div class="brand">
       <img class="avatar" src="https://saharsh.tech/assets/images/saharsh.png">

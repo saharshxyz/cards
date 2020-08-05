@@ -1,5 +1,5 @@
 body {
-  font-family: 'Gotham A', 'Gotham B', system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Nunito', system-ui, 'Segoe UI', Roboto, sans-serif;
   font-size: 16px;
   letter-spacing: -0.015em;
   line-height: 1.65;
@@ -9,14 +9,14 @@ body {
 
 a {
   cursor: pointer;
-  color: #8900e1;
+  color: #0172f4;
   text-decoration: none;
   transition: all 0.2s ease;
-  border-bottom: 1px solid white;
+  border-bottom: 1px dashed #0172f4;
 }
 
 a:hover {
-  border-bottom: 1px solid #57068c;
+  border-bottom: 1px solid #0169df;
 }
 
 h1 {
@@ -321,5 +321,47 @@ img {
   }
   .github-corner .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000;
+    color: #eee;
+  }
+  button,
+  .input-outer-wrapper,
+  .select-wrapper {
+    background: #111;
+    border-color: #222;
+    color: inherit;
+  }
+  .input-inner-wrapper input,
+  select {
+    color: inherit;
+  }
+  button:hover,
+  .input-outer-wrapper:hover,
+  .select-wrapper:hover,
+  .select-arrow {
+    border-color: #222;
+    background: #222;
+    box-shadow: none;
+    color: inherit;
+  }
+  a {
+    color: #fbb13c;
+    border-bottom: 1px dashed #fbb13c;
+  }
+
+  a:hover {
+    border-bottom: 1px solid #ff9a1f;
+  }
+  .image-wrapper {
+    border-bottom: 0 !important;
+  }
+  .image-wrapper:focus,
+  .image-wrapper:hover {
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25);
   }
 }
