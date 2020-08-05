@@ -2,9 +2,6 @@
   "name": "ima-cards",
   "version": "1.0.0",
   "description": "Generate Open Graph images for @lachlanjc/ima",
-  "engines": {
-    "node": "10.x"
-  },
   "scripts": {
     "build": "tsc -p api/tsconfig.json && tsc -p web/tsconfig.json"
   },
