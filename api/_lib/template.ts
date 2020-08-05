@@ -25,7 +25,7 @@ function getCss(theme: string, fontSize: string) {
       text-align: center;
       align-items: center;
       justify-content: center;
-      font-family: 'Gotham A', 'Gotham B', sans-serif;
+      font-family: 'Nunito', sans-serif;
       font-size: ${sanitizeHtml(fontSize)};
       font-style: normal;
       letter-spacing: -.01em;
@@ -134,7 +134,6 @@ export function getHtml(parsedReq: ParsedRequest) {
   <style>
     ${getCss(theme, fontSize)}
   </style>
-  <link rel="stylesheet" href="http://assets.lachlanjc.me/bf566c6457ac/gotham.css" />
   <body>
     <div class="brand">
       <img class="avatar" src="https://saharsh.tech/assets/images/saharsh.png">
