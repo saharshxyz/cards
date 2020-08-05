@@ -148,8 +148,7 @@ button:hover {
   user-select: none;
   position: relative;
   overflow: hidden;
-  transition: border 0.2s, background 0.2s, color 0.2s ease-out,
-    box-shadow 0.2s ease;
+  transition: border 0.2s, background 0.2s, color 0.2s ease-out, box-shadow 0.2s ease;
   border-radius: 6px;
   white-space: nowrap;
   line-height: 0;
@@ -272,7 +271,8 @@ img {
 
 .image-wrapper:hover {
   box-shadow: 0 1px 16px rgba(0, 0, 0, 0.1);
-  border-color: #dde1e4;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 1000px) {
