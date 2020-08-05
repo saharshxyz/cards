@@ -1,7 +1,7 @@
 {
-  "name": "ima-cards",
+  "name": "thought-cards",
   "version": "1.0.0",
-  "description": "Generate Open Graph images for @lachlanjc/ima",
+  "description": "Generate Open Graph images for blog.saharsh.tech",
   "scripts": {
     "build": "tsc -p api/tsconfig.json && tsc -p web/tsconfig.json"
   },

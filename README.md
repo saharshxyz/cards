@@ -1,7 +1,7 @@
-# @lachlanjc/ima-cards
+# @saharshy29/thought-cards
 
-A service that generates dynamic Open Graph images for [@lachlanjc/ima](https://ima.lachlanjc.me).
+A service that generates dynamic Open Graph images for [Saharsh's blog](https://blog.saharsh.tech).
 
-Based heavily on [Vercel's system](https://vercel.co/blog/social-og-image-cards-as-a-service), adapted by [@lachlanjc](https://lachlanjc.me).
+Based heavily on [Vercel's system](https://vercel.co/blog/social-og-image-cards-as-a-service), adapted by [@saharshy29](https://saharsh.tech).
 
 MIT License
