@@ -12,9 +12,9 @@ function getCss(theme: string, fontSize: string) {
   const radialDark = '#2D3B4E';
   const colorDarkPri = '#FBB13C';
   const colorDarkSec = '#FF9A1F';
-  const colorLightPri = '#0172F4';
+  const colorLightPri = '#0169DF';
   const colorLightSec = '#362EDC';
-  const ColorSec = '#7a8c97';
+  const colorSec = '#7a8c97';
 
   let background = bgLight;
   let radial = radialLight;
@@ -64,7 +64,7 @@ function getCss(theme: string, fontSize: string) {
     }
 
     .plus {
-      color: ${ColorSec};
+      color: ${colorSec};
       font-size: 100px;
       padding: 0 50px;
     }
@@ -80,7 +80,7 @@ function getCss(theme: string, fontSize: string) {
       position: absolute;
       top: 0;
       width: 100%;
-      color: ${ColorSec};
+      color: ${colorSec};
       display: flex;
       align-items: center;
       justify-content: center;
@@ -115,7 +115,7 @@ function getCss(theme: string, fontSize: string) {
     .caption {
       font-size: ${Number(sanitizeHtml(fontSize).match(/\d+/)) * 0.375}px;
       text-transform: uppercase;
-      color: ${ColorSec};
+      color: ${colorSec};
       font-weight: 400;
       letter-spacing: 0;
     }

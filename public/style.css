@@ -9,14 +9,14 @@ body {
 
 a {
   cursor: pointer;
-  color: #8900e1;
+  color: #0172f4;
   text-decoration: none;
   transition: all 0.2s ease;
-  border-bottom: 1px solid white;
+  border-bottom: 1px dashed #0172f4;
 }
 
 a:hover {
-  border-bottom: 1px solid #57068c;
+  border-bottom: 1px solid #0169df;
 }
 
 h1 {
@@ -350,7 +350,12 @@ img {
     color: inherit;
   }
   a {
-    color: #ff8c37;
+    color: #fbb13c;
+    border-bottom: 1px dashed #fbb13c;
+  }
+
+  a:hover {
+    border-bottom: 1px solid #ff9a1f;
   }
   .image-wrapper {
     border-bottom: 0 !important;
