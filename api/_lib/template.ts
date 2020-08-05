@@ -75,7 +75,7 @@ function getCss(theme: string, fontSize: string) {
       align-items: center;
       justify-content: center;
     }
-    .nyu {
+    .brand--emphasis {
       color: ${theme === 'dark' ? '#c975ff' : '#57068c'};
       font-weight: 700;
       font-size: 100px;
@@ -138,7 +138,7 @@ export function getHtml(parsedReq: ParsedRequest) {
   <body>
     <div class="brand">
       <img class="avatar" src="https://saharsh.tech/assets/images/saharsh.png">
-      @saharshy29 @ <span class="nyu">IMA</span>
+      @saharshy29 | <span class="brand--emphasis">thoughts.</span>
     </div>
     <div class="spacer">
       ${
