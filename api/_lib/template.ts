@@ -6,14 +6,14 @@ const twOptions = { folder: 'svg', ext: '.svg' };
 const emojify = (text: string) => twemoji.parse(text, twOptions);
 
 function getCss(theme: string, fontSize: string) {
-  const bgLight = '#FFFFFF';
-  const radialLight = '#E4E9F1';
+  const bgLight = '#E4E9F1';
+  const radialLight = '#FFFFFF';
   const bgDark = '#15283B';
   const radialDark = '#2D3B4E';
   const colorDarkPri = '#FBB13C';
   const colorDarkSec = '#FF9A1F';
-  const colorLightPri = '#0169DF';
-  const colorLightSec = '#362EDC';
+  const colorLightPri = '#FBB13C';
+  const colorLightSec = '#FF9A1F';
   const colorSec = '#7a8c97';
 
   let background = bgLight;
