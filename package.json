@@ -1,7 +1,7 @@
 {
   "name": "cards",
   "version": "1.0.0",
-  "description": "Generate Open Graph images for blog.saharsh.tech",
+  "description": "Generate Open Graph images for saharsh.tech",
   "engines": {
     "node": "10.x"
   },
