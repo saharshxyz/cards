@@ -175,6 +175,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
     md = true,
     text = '**thoughts.**',
     caption = 'think',
+    brand = 'thoughts.',
     images = [],
     showToast = false,
     messageToast = '',
@@ -188,6 +189,7 @@ const App = (_: any, state: AppState, setState: SetState) => {
   url.searchParams.append('md', mdValue);
   url.searchParams.append('fontSize', fontSize);
   url.searchParams.append('caption', encodeURIComponent(caption));
+  url.searchParams.append('brand', encodeURIComponent(brand));
   for (let image of images) {
     url.searchParams.append('images', image);
   }
@@ -239,6 +241,16 @@ const App = (_: any, state: AppState, setState: SetState) => {
             oninput: (val: string) => {
               console.log('oninput ' + val);
               setLoadingState({ text: val, overrideUrl: url });
+            },
+          }),
+        }),
+        H(Field, {
+          label: 'Brand Input',
+          input: H(TextInput, {
+            value: brand,
+            oninput: (val: string) => {
+              console.log('oninput ' + val);
+              setLoadingState({ brand: val, overrideUrl: url });
             },
           }),
         }),

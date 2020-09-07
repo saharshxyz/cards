@@ -147,7 +147,7 @@ function getCss(theme: string, fontSize: string) {
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
-  const { text, theme, md, fontSize, images, caption } = parsedReq;
+  const { text, theme, md, fontSize, images, caption, brand } = parsedReq;
   return `<!DOCTYPE html>
   <html>
   <meta charset="utf-8">
@@ -165,7 +165,13 @@ export function getHtml(parsedReq: ParsedRequest) {
   <body>
     <div class="brand">
       <img class="avatar" src="https://assets.saharsh.tech/saharsh/pfp--2020__circle.png">
-      @saharshy29 | <span class="brand--emphasis">thoughts.</span>
+      @saharshy29${
+        brand !== 'undefined'
+          ? ` | <span class="brand--emphasis">${emojify(
+              sanitizeHtml(brand)
+            )}</span>`
+          : ''
+      }
     </div>
     <div class="spacer">
       ${
