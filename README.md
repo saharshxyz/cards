@@ -1,4 +1,4 @@
-# @saharshy29/thought-cards
+# @saharshy29/cards
 
 A service that generates dynamic Open Graph images for [Saharsh's blog](https://blog.saharsh.tech).
 

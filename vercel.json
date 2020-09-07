@@ -1,5 +1,5 @@
 {
-  "name": "thought-cards",
+  "name": "cards",
   "public": true,
   "version": 2,
   "routes": [{ "handle": "filesystem" }, { "src": "/(.+)", "dest": "/api" }]

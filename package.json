@@ -1,5 +1,5 @@
 {
-  "name": "thought-cards",
+  "name": "cards",
   "version": "1.0.0",
   "description": "Generate Open Graph images for blog.saharsh.tech",
   "engines": {
