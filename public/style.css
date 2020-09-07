@@ -1,5 +1,14 @@
+:root {
+  --fonts-sans: 'IBM Plex Sans', 'Helvetica Neue', '-apple-system',
+    'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'sans-serif';
+  --fonts-serif: 'IBM Plex Serif', 'Georgia', 'Times', 'serif';
+  --fonts-mono: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono',
+    'Bitstream Vera Sans Mono', 'Courier', 'monospace';
+}
+
 body {
-  font-family: 'Lato', 'Lora', system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--fonts-sans);
   font-size: 16px;
   letter-spacing: -0.015em;
   line-height: 1.65;
@@ -8,8 +17,12 @@ body {
 }
 
 h1,
-h2 {
-  font-family: 'Lora', 'Lato', system-ui, 'Segoe UI', Roboto, sans-serif;
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fonts-serif);
 }
 
 a {
@@ -153,7 +166,8 @@ button:hover {
   user-select: none;
   position: relative;
   overflow: hidden;
-  transition: border 0.2s, background 0.2s, color 0.2s ease-out, box-shadow 0.2s ease;
+  transition: border 0.2s, background 0.2s, color 0.2s ease-out,
+    box-shadow 0.2s ease;
   border-radius: 6px;
   white-space: nowrap;
   line-height: 0;

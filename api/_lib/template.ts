@@ -6,25 +6,34 @@ const twOptions = { folder: 'svg', ext: '.svg' };
 const emojify = (text: string) => twemoji.parse(text, twOptions);
 
 function getCss(theme: string, fontSize: string) {
-  const bgLight = '#FFFFFF';
-  const radialLight = '#E4E9F1';
-  const bgDark = '#15283B';
-  const radialDark = '#2D3B4E';
-  const colorDarkPri = '#FBB13C';
-  const colorDarkSec = '#FF9A1F';
-  const colorLightPri = '#0169DF';
-  const colorLightSec = '#362EDC';
-  const colorSec = '#7a8c97';
+  const lightBG__primary = '#e4e9f1';
+  const lightBG__secondary = '#ffffff';
+  const darkBG__primary = '#15283b';
+  const darkBG__secondary = '#2d3b4e';
+  const darkCOLOR__primary = '#ff9a1f';
+  const darkCOLOR__secondary = '#fbb13c';
+  const lightCOLOR__primary = '#01a7c2';
+  const lightCOLOR__secondary = '#086c71';
+  const colorGray = '#7a8c97';
 
-  let background = bgLight;
-  let radial = radialLight;
+  let background = lightBG__primary;
+  let radial = lightBG__secondary;
 
   if (theme === 'dark') {
-    background = bgDark;
-    radial = radialDark;
+    background = darkBG__primary;
+    radial = darkBG__secondary;
   }
 
   return `
+    :root {
+      --fonts-sans: 'IBM Plex Sans', 'Helvetica Neue', '-apple-system',
+        'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+        'Fira Sans', 'Droid Sans', 'sans-serif';
+      --fonts-serif: 'IBM Plex Serif', 'Georgia', 'Times', 'serif';
+      --fonts-mono: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono',
+        'Bitstream Vera Sans Mono', 'Courier', 'monospace';
+    }
+
     body {
       background: ${background};
       background-image: radial-gradient(circle at 25px 25px, ${radial} 3%, transparent 0%),   
@@ -35,18 +44,18 @@ function getCss(theme: string, fontSize: string) {
       text-align: center;
       align-items: center;
       justify-content: center;
-      font-family: 'Lato', 'Lora', system-ui, 'Segoe UI', Roboto, sans-serif;
+      font-family: var(--fonts-sans);
       font-size: ${sanitizeHtml(fontSize)};
       font-style: normal;
       letter-spacing: -.01em;
     }
 
     heading, brand--emphasis {
-      font-family: 'Lora', 'Lato', system-ui, 'Segoe UI', Roboto, sans-serif;
+      font-family: var(--fonts-serif);
     }
 
     code {
-      font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, sans-serif;
+      font-family: var(--fonts-mono);
       font-size: .875em;
       white-space: pre-wrap;
     }
@@ -68,7 +77,7 @@ function getCss(theme: string, fontSize: string) {
     }
 
     .plus {
-      color: ${colorSec};
+      color: ${colorGray};
       font-size: 100px;
       padding: 0 50px;
     }
@@ -84,13 +93,13 @@ function getCss(theme: string, fontSize: string) {
       position: absolute;
       top: 0;
       width: 100%;
-      color: ${colorSec};
+      color: ${colorGray};
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .brand--emphasis {
-      color: ${theme === 'dark' ? colorDarkPri : colorLightPri};
+      color: ${theme === 'dark' ? darkCOLOR__primary : lightCOLOR__primary};
       font-weight: 700;
       font-size: 100px;
       padding-left: .25em;
@@ -99,8 +108,8 @@ function getCss(theme: string, fontSize: string) {
     .heading {
       ${
         theme === 'dark'
-          ? `background-image: linear-gradient(to bottom right, ${colorDarkPri} 60%, ${colorDarkSec});`
-          : `background-image: linear-gradient(to bottom right, ${colorLightPri} 80%, ${colorLightSec});`
+          ? `background-image: linear-gradient(to bottom right, ${darkCOLOR__primary} 60%, ${darkCOLOR__secondary});`
+          : `background-image: linear-gradient(to bottom right, ${lightCOLOR__primary} 80%, ${lightCOLOR__secondary});`
       };
       background-repeat: no-repeat;
       -webkit-background-clip: text;
@@ -118,7 +127,7 @@ function getCss(theme: string, fontSize: string) {
     .caption {
       font-size: ${Number(sanitizeHtml(fontSize).match(/\d+/)) * 0.375}px;
       text-transform: uppercase;
-      color: ${colorSec};
+      color: ${colorGray};
       font-weight: 400;
       letter-spacing: 0;
     }
@@ -144,13 +153,18 @@ export function getHtml(parsedReq: ParsedRequest) {
   <meta charset="utf-8">
   <title>Generated Image</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link
+          key="fonts-preconnect"
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+        />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <style>
     ${getCss(theme, fontSize)}
   </style>
   <body>
     <div class="brand">
-      <img class="avatar" src="https://saharsh.tech/assets/images/saharsh.png">
+      <img class="avatar" src="https://assets.saharsh.tech/saharsh/pfp--2020__circle.png">
       @saharshy29 | <span class="brand--emphasis">thoughts.</span>
     </div>
     <div class="spacer">
@@ -165,8 +179,14 @@ export function getHtml(parsedReq: ParsedRequest) {
         </div>`
           : ''
       }
-      <div class="heading">${emojify(md ? marked(text) : sanitizeHtml(text))}</div>
-      ${caption !== 'undefined' ? `<div class="caption">${emojify(sanitizeHtml(caption))}</div>` : ''}
+      <div class="heading">${emojify(
+        md ? marked(text) : sanitizeHtml(text)
+      )}</div>
+      ${
+        caption !== 'undefined'
+          ? `<div class="caption">${emojify(sanitizeHtml(caption))}</div>`
+          : ''
+      }
     </div>
   </body>
 </html>`;
